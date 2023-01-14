@@ -7,7 +7,7 @@ public class spehere : MonoBehaviour
 {
     private Renderer ren;
     public AudioSource aSource;
-    public AudioClip[] aClip;
+    //public AudioClip[] aClip;
     private int clipIndex = 0;
     private int randomN;
     public Transform trans;
@@ -69,7 +69,7 @@ public class spehere : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            if (aSource.isPlaying)
+            if (aSource.isPlaying && Input.GetMouseButtonDown(0))
             {
                 aSource.Stop();                
 
@@ -77,9 +77,8 @@ public class spehere : MonoBehaviour
             }
 
             ren.material.color = Color.gray;
-
-            aSource.PlayDelayed(10f);
-            aSource.PlayOneShot(aClip[Random.Range(0, aClip.Length)]);
+                        
+            aSource.Play();
             
 
         }
