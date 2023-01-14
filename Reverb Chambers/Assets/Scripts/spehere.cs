@@ -6,14 +6,24 @@ using UnityEngine.Audio;
 public class spehere : MonoBehaviour
 {
     private Renderer ren;
-    //rpublic AudioClip[] audioSource;
-    public AudioSource [] aSource;
+    public AudioSource aSource;
+    public AudioClip[] aClip;
+    private int clipIndex = 0;
+    private int randomN;
+    public Transform trans;
+    public Rigidbody rb;
+    public float force = 10f;
+
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         ren = GetComponent<Renderer>();
+        rb = GetComponent<Rigidbody>();
+        trans = GetComponent<Transform>();
+
         
         
     }
@@ -21,33 +31,64 @@ public class spehere : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        
+
+        if (Input.GetKeyDown(KeyCode.A))
         {
             ren.material.color = Color.red;
-            aSource[0].Play();
+            rb.velocity = new Vector3(-1, 0, 0) * force;
+
+            //aSource[0].Play();
 
         }
 
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             ren.material.color = Color.blue;
-            aSource[1].Play();
+            rb.velocity = new Vector3(1, 0, 0) * force;
+            //aSource[1].Play();
 
         }
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             ren.material.color = Color.cyan;
-            aSource[2].Play();
+            rb.velocity = new Vector3(0, 0, 1) * force;
+           
+
+            // aSource[2].Play();
 
         }
 
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             ren.material.color = Color.green;
-            aSource[3].Play();
+            rb.velocity = new Vector3(0, 0, -1) * force;
+            // aSource[3].Play();
 
         }
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (aSource.isPlaying)
+            {
+                aSource.Stop();                
+
+
+            }
+
+            ren.material.color = Color.gray;
+
+            aSource.PlayDelayed(10f);
+            aSource.PlayOneShot(aClip[Random.Range(0, aClip.Length)]);
+            
+
+        }
+
+      
+
+        
+
+
 
 
     }
