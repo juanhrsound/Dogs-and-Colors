@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 85599788}
   - component: {fileID: 85599793}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: forest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -214,8 +214,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 85599787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.86, y: 1, z: 2.73}
-  m_LocalScale: {x: 4.7745996, y: 2.3762949, z: 3.193769}
+  m_LocalPosition: {x: -14.86, y: 1, z: 4.62}
+  m_LocalScale: {x: 4.7745996, y: 2.3762949, z: 8.001349}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ren: {fileID: 85599789}
   audioMixer: {fileID: 24100000, guid: a45c78408a83e4aad931ca53b9bb6678, type: 2}
-  church: {fileID: -1529526855299840995, guid: a45c78408a83e4aad931ca53b9bb6678, type: 2}
+  sendName: forestVol
 --- !u!1 &249795844
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,7 +669,7 @@ GameObject:
   - component: {fileID: 1305815050}
   - component: {fileID: 1305815054}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: church
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -708,7 +708,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 45d6d9f4ec3cd46698dca87a28b8d64b, type: 2}
+  - {fileID: 2100000, guid: 4c9cc0a334a204fb6a473c3c82161d59, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -746,8 +746,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305815048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.98, y: 1, z: 2.73}
-  m_LocalScale: {x: 7.8703947, y: 2.3762949, z: 3.193769}
+  m_LocalPosition: {x: -0.98, y: 1, z: 4.73}
+  m_LocalScale: {x: 7.8703947, y: 2.3762949, z: 8.243456}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -765,9 +765,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f19457c04b0e4bff90bf9e1f171f1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ren: {fileID: 0}
-  audioMixer: {fileID: 0}
-  church: {fileID: 0}
+  ren: {fileID: 1305815051}
+  audioMixer: {fileID: 24100000, guid: a45c78408a83e4aad931ca53b9bb6678, type: 2}
+  sendName: churchVol
 --- !u!1 &1449639778
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,7 +860,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449639778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.125, y: 2.06, z: -3.27}
+  m_LocalPosition: {x: -0.125, y: 2.06, z: -6.45}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -900,6 +900,74 @@ MonoBehaviour:
   trans: {fileID: 1449639782}
   rb: {fileID: 1449639783}
   force: 10
+--- !u!1 &1673430701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1673430704}
+  - component: {fileID: 1673430703}
+  - component: {fileID: 1673430702}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1673430702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673430701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1673430703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673430701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1673430704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673430701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2045016513
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,7 +982,7 @@ GameObject:
   - component: {fileID: 2045016515}
   - component: {fileID: 2045016519}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: passageway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -953,7 +1021,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a0424eab5a9264866afcdb4155bc4b21, type: 2}
+  - {fileID: 2100000, guid: 4c9cc0a334a204fb6a473c3c82161d59, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -991,8 +1059,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045016513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.08, y: 1, z: 2.73}
-  m_LocalScale: {x: 7.259601, y: 2.3762949, z: 3.193769}
+  m_LocalPosition: {x: 11.08, y: 1, z: 4.33}
+  m_LocalScale: {x: 7.259601, y: 2.3762949, z: 6.967846}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1010,6 +1078,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f19457c04b0e4bff90bf9e1f171f1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ren: {fileID: 0}
-  audioMixer: {fileID: 0}
-  church: {fileID: 0}
+  ren: {fileID: 2045016516}
+  audioMixer: {fileID: 24100000, guid: a45c78408a83e4aad931ca53b9bb6678, type: 2}
+  sendName: passagewayVol

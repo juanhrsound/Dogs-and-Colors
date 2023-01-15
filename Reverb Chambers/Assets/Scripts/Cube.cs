@@ -9,47 +9,47 @@ public class Cube : MonoBehaviour
    
     public Renderer ren;
     public AudioMixer audioMixer;
-    public AudioMixerGroup church;
+    public string sendName;    
 
     // Start is called before the first frame update
     void Start()
     {
         ren = GetComponent<Renderer>();
-        audioMixer = GetComponent<AudioMixer>();
-     
+             
         
     }
 
     // Update is called once per frame
     void Update()
-    {
-              
-
-
-        
+    {   
+                
     }
    
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         
         if(other.CompareTag("spherePlayer"))
         {
-            if (ren.material.color == Color.black)
-            {
-                ren.material.color = Color.red;
-            } else
-            
-            {
-                SetSFXLvL(4f);
-                ren.material.color = Color.black;
-            }
+            audioMixer.SetFloat(sendName, 0f);            
+            ren.material.color = Color.black;
+           
         }
     }
 
-    public void SetSFXLvL(float sfxLvl)
+
+    private void OnTriggerExit(Collider other)
     {
-        church.audioMixer.SetFloat("churchVol", sfxLvl);
+        if (other.CompareTag("spherePlayer"))
+        {
+
+            audioMixer.SetFloat(sendName, -80f);
+            ren.material.color = Color.green;
+
+        }
     }
+
+    
+   
 
 }
