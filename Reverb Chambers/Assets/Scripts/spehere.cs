@@ -67,6 +67,15 @@ public class spehere : MonoBehaviour
             // aSource[3].Play();
 
         }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            rb.velocity = new Vector3(0, 0, 0);
+        }
+
+
+
+
         if (Input.GetMouseButtonDown(0))
         {
             if (aSource.isPlaying && Input.GetMouseButtonDown(0))
